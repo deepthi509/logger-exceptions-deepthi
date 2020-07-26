@@ -1,39 +1,45 @@
 package house;
 
-  
 
-import java.util.Scanner;
+import java.util.*;
 import java.util.logging.Level; 
 import java.util.logging.Logger; 
 import java.util.logging.*; 
-public class Logger3
- {
-static double simp_interest,comp_interest;
-static double prin_amount, rate, time;
+public class Logger2{
+	static int n;
+	static float cost;
 private final static Logger LOGGER =  
                 Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); 
-public void calculation() 
-	{
- 	Scanner scanner=new Scanner (System. in);
-LOGGER.log(Level.INFO, "enter the principle amount"); 
-prin_amount=scanner.nextDouble();
-LOGGER.log(Level.INFO, "enter the time period"); 
-time=scanner.nextDouble();
-LOGGER.log(Level.INFO, "enter the rate of interest"); 
-rate=scanner.nextDouble();
- 	 simp_interest=(prin_amount*time*rate)/100;
-		LOGGER.log(Level.INFO, "the simple interest is:"+simp_interest); 
-	comp_interest=prin_amount * Math.pow(1.0+rate/100.0,time) - prin_amount;
-		LOGGER.log(Level.INFO, "the compound interest is"+comp_interest); 
-} 
+public void method() {
+ Scanner sc=new Scanner(System.in);
 
-public static void main(String args[]) 
-	{
+LOGGER.log(Level.INFO, "Enter the square feet:");
+            n=sc.nextInt();
+LOGGER.log(Level.INFO, "Enter the choice:");
+	int choice=sc.nextInt();
 
-Logger3 interest=new Logger3();
-	interest.calculation();
+    switch(choice) {
+	case 1:
+        cost=1200*n;
+    	break;
+    case 2:
+        cost=1500*n;
+    	break;
+    case 3:
+    	cost=1800*n;
+    	break;
+    case 4:
+    	cost=2500*n;
+    	break;
+    default:
+    	LOGGER.log(Level.INFO, "invalid choice");
+    }
+  LOGGER.log(Level.INFO, "cost for house"+cost);
+   }
+public static void main(String args[]) {
 
-	}
+	    Logger2 hc=new Logger2();
+	hc.method();
+
 }
-
-
+}
